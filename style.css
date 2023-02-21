@@ -2,7 +2,8 @@ html {
   font-family: 'Avenir', 'Source Sans Pro', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  height: 100%
+  height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -12,7 +13,6 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  margin: 0;
   padding: 0;
   height: 100%;
   width: 100%
@@ -97,34 +97,50 @@ p {
   justify-content: center;
 }
 
+.subtitle{
+  display: flex;
+  text-align: stretch;
+  /* flex: 0 1 15%; */
+  z-index: 1001;
+  min-height: 5vh;
+  max-width: 60rem;
+  width: 100%;
+  font-family: 'Source Serif 4', serif;
+  font-size: 3rem;
+}
+
 .container {
   display: flex;
   flex: 1 1 auto;
   max-height: 60vh;
-  min-height: 15rem;
+  min-height: 25rem;
   
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 1%;
-  padding-right: 10%;
-  /* width: 100vw; */
   z-index: 1001;
   width: 100%;
-    padding: 30px;
-    flex-grow: 1;
-    margin: 0 auto;
-    box-sizing: border-box;
+  padding: 30px;
+  flex-grow: 1;
+  margin: 0 0 0 0;
+  box-sizing: border-box;
 }
 
 .vertical {
   flex-direction: column;
   align-items: center;
   align-content: center;
+  justify-content: center;
   /* flex-grow: 1; */
 }
 
 .odd {
   background-color: rgba(1, 1, 1, .1);
+}
+
+.right {
+  text-align: right;
+  justify-content: flex-end;
+  padding-right: 6rem;
 }
 
 /* .project {
@@ -210,19 +226,8 @@ img {
   transform: translateX(10px);
 }
 
-.background {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-around; */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
 
 
-.imperial {
-  background-image: url(https://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/0160108_qt_sken_winter_012_185276_001--t_1551277327028_x2--tojpeg_1561027260429_x1.jpg);
-}
 
 .footer {
   display: flex;
@@ -260,6 +265,7 @@ img {
   z-index:-1;
 }
 
+
 .gradient-body {
   background-color: #536878;
   position: absolute;
@@ -267,7 +273,9 @@ img {
   display: flex;
   place-content: center;
   align-items: center;
-  overflow: clip;
+  overflow: hidden;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 @keyframes rotate2 {
@@ -284,4 +292,5 @@ img {
   background-color: #FFB74D;
   animation: rotate2 var(--speed) var(--easing) alternate infinite;
   border-radius: 20% 80% 120% 30% / 10% 30% 10% 70%;
+  overflow: hidden;
 }
