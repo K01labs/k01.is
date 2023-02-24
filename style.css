@@ -52,6 +52,7 @@ p {
   background-color: #fff;
 } */
 
+
 .nav-list {
   /* background: #fafafa; */
   padding: 1rem 0;
@@ -228,10 +229,19 @@ img {
   color: #252525;
   transform: translateX(0) translateY(0);
   transition: transform 0.7s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
 .k01 {
   font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+  background-color: rgba(0.75, 0.75, 0.75, .15);
+  color: #252525;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .col:hover .title {
@@ -295,7 +305,7 @@ height: 100%;
 
 @keyframes rotate {
   0% {
-    transform: translateX(0vw) translateY(0vh) rotate(0deg);
+    transform: translateX(0vw) translateY(0vh) rotate(40deg);
   }
 
   50% {
@@ -303,7 +313,7 @@ height: 100%;
   }
 
   100% {
-    transform: translateX(60vw) translateY(0vh) rotate(360deg);
+    transform: translateX(60vw) translateY(0vh) rotate(110deg);
   }
 }
 
@@ -322,22 +332,22 @@ height: 100%;
 }
 
 @keyframes rotate3 {
-  100% {
-    transform: translateX(60vw) translateY(200vh) rotate(0deg);
-  }
-
   0% {
-    transform: translateX(50vw) translateY(200vh) rotate(360deg);
+    transform: translateX(50vw) translateY(400%) rotate(360deg);
   }
 
   50% {
     transform: translateX(10vw) translateY(15vh) rotate(0deg);
   }
+
+  100% {
+    transform: translateX(60vw) translateY(200vh) rotate(0deg);
+  }
 }
 
 @keyframes rotate4 {
   0% {
-    transform: translateX(60vw) translateY(150vh) rotate(0deg);
+    transform: translateX(60vw) translateY(200%) rotate(0deg);
   }
 
   50% {
@@ -350,12 +360,12 @@ height: 100%;
 }
 
 .gradient {
-  --size: 30rem;
+  --size: 100vh;
   --speed: 50s;
   --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
 
   width: var(--size);
-  height: 40vw;
+  height: 80vh;
   filter: blur(calc(var(--size) / 5));
   background-image: linear-gradient(hsl(158, 82, 57, 85%), hsl(252, 82, 57));
   animation: rotate var(--speed) var(--easing) alternate infinite;
@@ -372,18 +382,18 @@ height: 100%;
 }
 
 .gradient-three {
-  width: 15rem;
-  height: 15rem;
-  filter: blur(calc(15rem / 5));
+  width: 50vh;
+  height: 60vh;
+  filter: blur(calc(50vh / 5));
   background-color: #FFB74D;
   animation: rotate3 var(--speed) var(--easing) alternate infinite;
   border-radius: 20% 80% 120% 30% / 10% 30% 10% 70%;
 }
 
 .gradient-four {
-  width: 15rem;
-  height: 15rem;
-  filter: blur(calc(15rem / 5));
+  width: 50vh;
+  height: 60vh;
+  filter: blur(calc(50vh / 5));
   background-color: #536878;
   animation: rotate4 var(--speed) cubic-bezier(0.2, 0.8, 0.8, 0.2) alternate infinite;
   border-radius: 20% 80% 120% 30% / 10% 30% 10% 70%;
