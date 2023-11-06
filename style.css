@@ -146,7 +146,7 @@ h1 {
 .container {
   display: flex;
   flex: 1 1 auto;
-  max-height: 60vh;
+  /* max-height: 60vh; */
   min-height: 25rem;
   
   padding-left: 10%;
@@ -176,6 +176,56 @@ h1 {
   text-align: right;
   justify-content: flex-end;
   margin-right: 8rem;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  /* Adjust the margin as needed */
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  /* Adjust the width as needed */
+  margin: 1rem;
+    /* Adds space uniformly around each profile */
+}
+
+.profile-photo {
+  max-width: 320px;
+  /* or any other dimensions */
+  height: auto;
+  display: block;
+}
+
+.profile img {
+  width: 100%;
+  /* Adjust if you want a different width for the images */
+  height: auto;
+  border-radius: 50%;
+  /* Optional: if you want round images */
+}
+
+.profile-bio {
+  font-size: 0.85em;
+  /* This makes the bio text smaller than the normal text */
+}
+
+.title-bold {
+  font-weight: bold;
+  /* This will make the text bold */
+  font-size: 1.3rem;
+  /* This retains the font size you previously had */
+  /* Add other styling as necessary to match your design */
+}
+
+.profile p {
+  text-align: center;
 }
 
 /* .project {
@@ -224,6 +274,17 @@ h1 {
     width: 100%;
     margin: 0 0 0 0;
   }
+    .profile-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .profile {
+      width: 80%;
+      /* Adjust the width as needed */
+      margin-bottom: 1rem;
+      /* Space between the profiles when stacked */
+    }
 }
 
 .item {
