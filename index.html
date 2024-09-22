@@ -70,14 +70,15 @@
     <div class="main">
       
       <div class="title k01">
-        <h1>AI for an intelligent world.</h1>
+        <!-- <h1>AI for an intelligent world.</h1> -->
+        <h1>AI for <span id="changing-text"></span></h1>
         <!-- <h1 class="logo">K01</h1> -->
       </div>
 
       <div class="vertical container" id="About">
-        <p>We are on a mission to revolutionise the way we interact with technology. Through our research and innovative applications,
-        we are transforming the way people access information and interact with the world around them. Our vision is to create a
-        future where AI is an integral part of our lives, providing us with unprecedented insight, intelligence and efficiency.</p>
+        <p>We are revolutionising human-technology interaction through cutting-edge AI and machine learning. With deep expertise
+        and innovative solutions, we aim to reshape how people access information and engage with the world. Our vision is a
+        future where AI seamlessly enhances daily life, delivering unmatched intelligence, efficiency and insight.</p>
       </div>
 
       <div class="container vertical" id="Team">
@@ -114,7 +115,7 @@
 
       <div class="vertical container odd" id="Mission">
         <div class="subtitle">Mission</div>
-        <p>We strive to develop innovative AI solutions that solve real-world problems in fields such as health and law. We
+        <p>We strive to develop innovative AI solutions that solve real-world problems across sectors. We
         research and develop cutting edge technology to create products that are of maximum benefit to society.</p>
       </div>
 
@@ -141,6 +142,44 @@
     <div class="footer">
       <p class="footer-font">Copyright &copy; 2023 K01 ehf. All rights reserved.</p>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      var phrases = [
+          "an intelligent world.",
+          "a healthy life.",
+          "a sustainable future.",
+          "smarter cities.",
+          "innovative solutions.",
+          "a connected society.",
+          "global well-being.",
+          "responsible technology.",
+          "digital transformation.",
+          "better healthcare.",
+          "green energy."
+        ];
+
+      // Shuffle the phrases array
+      shuffleArray(phrases);
+
+      var options = {
+        strings: phrases,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000,
+        loop: true
+      };
+
+      var typed = new Typed("#changing-text", options);
+
+      // Shuffle function to randomize the phrases
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+    </script>
   </body>
 
 </html>
