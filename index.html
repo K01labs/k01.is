@@ -1,185 +1,1070 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>K01</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="twitter:card" content="summary" />
-    <!-- <meta name="twitter:site" content="@arinbjornkol" /> -->
-    <meta name="twitter:title" content="K01" />
-    <!-- <meta name="twitter:description" content="View the album on Flickr." /> -->
-    <meta name="twitter:image" content="favicons/apple-touch-icon.png" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-62HQE3WZ9T"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
 
-        gtag('config', 'G-62HQE3WZ9T');
-    </script>
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-    <link rel="manifest" href="/favicons/site.webmanifest">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-  </head>
+<head>
+  <title>K01</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="K01 - Advancing Machine Learning for health">
+  <meta property="og:description"
+    content="At K01, we develop machine learning solutions that prioritise privacy and ethics, driving innovation in personalised medicine and healthcare applications.">
+  <meta property="og:image" content="https://k01.is/assets/og-image.jpg">
+  <meta property="og:url" content="https://k01.is">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Source+Sans+Pro:wght@300;400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #536878;
+      --accent-color: #FFB74D;
+      --text-color: #1f2937;
+      --bg-color: #ffffff;
+      --secondary-bg: rgba(83, 104, 120, 0.05);
+      --glass-bg: rgba(255, 255, 255, 0.2);
+    }
+
+    @media (prefers-color-scheme: dark) {
+  :root {
+    /* Warmer primary colors */
+    --primary-color: #A3C5DB;
+    --accent-color: #FFB74D;
+    /* Neutral dark background */
+    --bg-color: #1A1A1D;
+    /* Clean white text */
+    --text-color: #F3F4F6;
+    /* Warm gray for secondary */
+    --secondary-text: #D1D5DB;
+    /* Semi-transparent glass */
+    --glass-bg: rgba(26, 26, 29, 0.7);
+  }
+
+  /* Base elements */
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  /* Text hierarchy */
+  .headline,
+  .section-title,
+  .profile-name,
+  h1, h2, h3, h4, h5, h6,
+  p {
+    color: var(--text-color) !important;
+  }
+
+  .subheadline,
+  .section-text,
+  .stat-description,
+  .profile-title,
+  .profile-bio,
+  .feature-card p {
+    color: var(--secondary-text) !important;
+  }
+
+  /* Sections with frosted glass */
+  section {
+    background: rgba(26, 26, 29, 0.7) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  section.alt-bg {
+    background: rgba(32, 32, 35, 0.7) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .hero {
+    background: rgba(26, 26, 29, 0.85) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Navigation */
+  nav {
+    background: rgba(26, 26, 29, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-item a {
+    color: var(--text-color) !important;
+  }
+
+  /* Feature cards */
+  .feature-card {
+    background: rgba(32, 32, 35, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Code block */
+  .code-block {
+    background: rgba(26, 26, 29, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+  }
+
+  /* Stats */
+  .stat-number {
+    color: var(--primary-color) !important;
+  }
+
+  /* Gradients */
+  .gradient-bg {
+    background: var(--bg-color);
+  }
+
+  .gradient {
+    opacity: 0.2;
+    mix-blend-mode: soft-light;
+  }
+
+  .gradient-1,
+  .gradient-3,
+  .gradient-5,
+  .gradient-7,
+  .gradient-8 {
+    background: rgba(163, 197, 219, 0.1);
+  }
+
+  .gradient-2,
+  .gradient-4,
+  .gradient-6 {
+    background: rgba(255, 183, 77, 0.1);
+  }
+
+  .page-footer {
+    background: rgba(226, 226, 229, 0.95) !important;
+    color: #1A1A1D;
+  }
+}
+
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      min-height: 100%;
+      position: relative;
+    }
+
+    nav {
+      position: fixed;
+      width: 100%;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(83, 104, 120, 0.1);
+    }
+
+    .nav-list {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      list-style: none;
+      max-width: 800px;
+      /* Match container width */
+    }
+
+    .nav-item {
+      margin-left: 2.5rem;
+      /* Increased spacing */
+    }
+
+    .nav-item a {
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.2s, opacity 0.2s;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .nav-item a:hover {
+      color: var(--primary-color);
+      opacity: 1;
+    }
+
+    .nav-item:first-child {
+      margin-right: auto;
+      margin-left: 0;
+    }
+
+    .nav-item:first-child a {
+      font-size: 1.5rem;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      opacity: 1;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(83, 104, 120, 0.1), rgba(255, 183, 77, 0.05));
+    }
 
 
-  <body>
-    <nav>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a href="#" class="k01">
-            K01
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#About">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="#Team">Team</a>
-        </li>
-        <li class="nav-item">
-          <a href="#Mission">Mission</a>
-        </li>
-        <li class="nav-item">
-          <a href="#Research">Research</a>
-        </li>
-        <li class="nav-item">
-          <a href="#Contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
+    .typed-text {
+      color: var(--primary-color);
+    }
 
-    <div class="background">
-      <div class="gradient gradient-body"></div>
-      <div class="gradient gradient-body gradient-two"></div>
-      <div class="gradient gradient-body gradient-three"></div>
-      <div class="gradient gradient-body gradient-four"></div>
-    </div>
+    .typed-cursor {
+      color: var(--accent-color);
+    }
 
-    <div class="main">
-      
-      <div class="title k01">
-        <!-- <h1>AI for an intelligent world.</h1> -->
-        <h1>AI for <span id="changing-text"></span></h1>
-        <!-- <h1 class="logo">K01</h1> -->
-      </div>
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-      <div class="vertical container" id="About">
-        <p>We are revolutionising human-technology interaction through cutting-edge AI and machine learning. With deep expertise
-        and innovative solutions, we aim to reshape how people access information and engage with the world. Our vision is a
-        future where AI seamlessly enhances daily life, delivering unmatched intelligence, efficiency and insight.</p>
-      </div>
+    .headline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      width: 90vw;
+      height: 14rem;
+    }
 
-      <div class="container vertical" id="Team">
-      <div class="subtitle">
-        Team
-      </div>
-      <div class="profile-container">
-        <div class="profile">
-          <img src="assets/img/arinbjorn.webp" alt="Profile of Arinbjörn" class="profile-photo">
-          <span class="title-bold">Arinbjörn Kolbeinsson</span>
-          <p>Co-founder</p>
-          <div class="profile-bio">
-            Alumnus of Imperial College London, where he earned his PhD. His
-            expertise spans across machine learning applications in various domains, reinforced by his experience at a leading
-            Silicon Valley healthtech startup and with top AI research institutions globally. Arinbjörn's contributions
-            to the field are marked by his innovative approaches to advancing both AI methodologies and applications.
-          </div>
+    .subheadline {
+      font-size: 1.5rem;
+      color: #4b5563;
+      max-width: 600px;
+      margin-bottom: 1rem;
+    }
 
-        </div>
-        <div class="profile">
-          <img src="assets/img/profile.jpg" alt="Profile of Benedikt" class="profile-photo">
-          <span class="title-bold">Benedikt Kolbeinsson</span>
-          <p>Co-founder</p>
-          <div class="profile-bio">
-            A visionary in the field of computer vision and machine learning, with his academic roots anchored at Imperial College
-            London. His work
-            bridges theoretical research and real-world applications, evidenced by his role in the Icelandic COVID-19
-            Taskforce and recognition by Huawei for advancements in autonomous vehicles. With a deep commitment to innovation,
-            Benedikt's expertise is shaping the future of AI-driven automation.
-          </div>
-        </div>
-      </div>
-      </div>
+    section {
+      padding: 6rem 2rem;
+      position: relative;
+    }
 
-      <div class="vertical container odd" id="Mission">
-        <div class="subtitle">Mission</div>
-        <p>We strive to develop innovative AI solutions that solve real-world problems across sectors. We
-        research and develop cutting edge technology to create products that are of maximum benefit to society.</p>
-      </div>
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-      <div class="vertical container" id="Research">
-        <div class="right subtitle">Research</div>
-        <p>Our research team is dedicated to exploring the possibilities of machine learning and staying at the forefront of the
-        field. We conduct fundamental research to create valuable insights that can be translated into real-world applications.</p>
-      </div>
-      
-      <div class="vertical container odd">
-        <div class="subtitle">Products</div>
-        <p>We develop AI-based products and services that are tailored to the needs of our customers in sectors such as health and
-        law. Our products are designed to save time, increase efficiency, and provide maximum value to our customers.</p>
-      </div>
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+    }
 
-      <div class="vertical container" id="Contact">
-        <div class="right subtitle alternate">Contact</div>
-        <p>Want to get in touch? Send us an email at <a href="mailto:contact@k01.is" style="text-decoration:none; color:#252525;">contact@k01.is</a></p>
-      </div>
+    .section-headline {
+      font-size: 1.75rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-    </div>
+    .section-text {
+      font-size: 1.125rem;
+      color: #4b5563;
+      max-width: 600px;
+      margin-bottom: 3rem;
+    }
 
+    .feature-grid {
+      display: grid;
+      gap: 3rem;
+      margin-top: 4rem;
+    }
 
-    <div class="footer">
-      <p class="footer-font">Copyright &copy; 2024 K01 ehf. All rights reserved.</p>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-      var phrases = [
-          "an intelligent world.",
-          "a healthy life.",
-          "a sustainable future.",
-          "smarter cities.",
-          "innovative solutions.",
-          "a connected society.",
-          "global well-being.",
-          "responsible technology.",
-          "digital transformation.",
-          "better healthcare.",
-          "green energy."
-        ];
+    .logo-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
 
-      // Shuffle the phrases array
-      shuffleArray(phrases);
+    .logo-item {
+      /* Desaturate logos for consistent look */
+      filter: grayscale(100%) opacity(70%);
+      transition: filter 0.3s ease;
+    }
 
-      var options = {
-        strings: phrases,
-        typeSpeed: 100,
-        backSpeed: 50,
-        backDelay: 2000,
-        loop: true
-      };
+    .logo-item:hover {
+      filter: grayscale(0%) opacity(100%);
+    }
 
-      var typed = new Typed("#changing-text", options);
-
-      // Shuffle function to randomize the phrases
-      function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
+    @media (prefers-color-scheme: dark) {
+      .logo-item {
+        filter: grayscale(100%) opacity(90%) brightness(1.9);
       }
-    </script>
-  </body>
+      
+      .logo-item:hover {
+        filter: grayscale(0%) opacity(100%) brightness(1.9);
+      }
+    }
+
+    .logo-item img {
+      max-height: 8rem;
+      width: auto;
+    }
+
+    .impact-blocks {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.impact-stat {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.stat-number span {
+  font-size: 2.5rem;
+  /* vertical-align: super; */
+}
+
+.stat-description {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.stat-description sup {
+  font-size: 0.75rem;
+  vertical-align: super;
+  margin-left: 0.25rem;
+}
+
+.citations {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+  font-style: italic;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.citations ol {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.citations li {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .impact-blocks {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+
+    @media (min-width: 769px) {
+      .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-card {
+      background: var(--glass-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(83, 104, 120, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(83, 104, 120, 0.1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .code-block {
+      font-family: monospace;
+      background: var(--secondary-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      overflow-x: auto;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 4rem;
+      margin-top: 4rem;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .profile img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-title {
+      color: #4b5563;
+      margin-bottom: 1rem;
+    }
+
+    .profile-bio {
+      font-size: 1rem;
+      color: #6b7280;
+    }
+
+    .alt-bg {
+      background: var(--secondary-bg);
+    }
+
+.gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(83, 104, 120, 0.1), rgba(255, 183, 77, 0.05));
+}
+
+    .gradient {
+      position: absolute;
+      width: 120vh;
+      height: 120vh;
+      filter: blur(80px);
+      opacity: 0.5;
+      mix-blend-mode: soft-light;
+    }
+
+    .gradient {
+  position: absolute;
+  width: 140vh;  /* Increased size for better coverage */
+  height: 140vh;
+  filter: blur(100px);  /* Slightly increased blur */
+  opacity: 0.4;
+  mix-blend-mode: soft-light;
+}
+
+.gradient-1 {
+  background: var(--primary-color);
+  animation: gradientFloat1 160s ease-in-out infinite;
+  top: 5%;
+  left: -30%;
+}
+
+.gradient-2 {
+  background: var(--accent-color);
+  animation: gradientFloat2 145s ease-in-out infinite;
+  top: -10%;
+  right: -20%;
+}
+
+.gradient-3 {
+  background: var(--primary-color);
+  animation: gradientFloat3 170s ease-in-out infinite;
+  top: 40%;
+  left: 15%;
+  opacity: 0.3;
+}
+
+.gradient-4 {
+  background: var(--accent-color);
+  animation: gradientFloat4 155s ease-in-out infinite;
+  top: 60%;
+  right: 20%;
+  opacity: 0.35;
+}
+
+.gradient-5 {
+  background: var(--primary-color);
+  animation: gradientFloat5 165s ease-in-out infinite;
+  top: 90%;
+  left: -25%;
+  opacity: 0.45;
+}
+
+.gradient-6 {
+  background: var(--accent-color);
+  animation: gradientFloat6 150s ease-in-out infinite;
+  top: 120%;
+  right: -15%;
+  opacity: 0.4;
+}
+
+.gradient-7 {
+  background: var(--primary-color);
+  animation: gradientFloat7 175s ease-in-out infinite;
+  top: 150%;
+  left: 10%;
+  opacity: 0.35;
+}
+
+/* Can remove gradient-8 if not needed, or repurpose it */
+.gradient-8 {
+  background: var(--primary-color);
+  animation: gradientFloat3 180s ease-in-out infinite;
+  top: 30%;
+  left: 25%;
+  opacity: 0.3;
+}
+
+    @keyframes gradientFloat1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  20% {
+    transform: translate(40%, -20%) scale(1.1);
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 70%;
+  }
+  40% {
+    transform: translate(60%, 30%) scale(0.95);
+    border-radius: 50% 40% 60% 50% / 40% 70% 30% 60%;
+  }
+  60% {
+    transform: translate(-30%, 50%) scale(1.15);
+    border-radius: 70% 30% 40% 60% / 30% 40% 70% 60%;
+  }
+  80% {
+    transform: translate(-50%, -30%) scale(0.9);
+    border-radius: 40% 60% 50% 50% / 60% 40% 50% 50%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+@keyframes gradientFloat2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%;
+  }
+  25% {
+    transform: translate(-45%, 35%) scale(1.2);
+    border-radius: 30% 70% 40% 60% / 70% 30% 70% 30%;
+  }
+  50% {
+    transform: translate(50%, 50%) scale(0.8);
+    border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+  }
+  75% {
+    transform: translate(30%, -45%) scale(1.3);
+    border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%;
+  }
+}
+
+@keyframes gradientFloat3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 40% 60% 40% 60% / 50% 50% 50% 50%;
+  }
+  30% {
+    transform: translate(55%, -40%) scale(1.15);
+    border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+  }
+  60% {
+    transform: translate(-40%, 60%) scale(0.9);
+    border-radius: 30% 70% 30% 70% / 70% 30% 70% 30%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 40% 60% 40% 60% / 50% 50% 50% 50%;
+  }
+}
+
+@keyframes gradientFloat4 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 30% 70% 70% 30% / 30% 70% 30% 70%;
+  }
+  33% {
+    transform: translate(-35%, -45%) scale(1.25);
+    border-radius: 70% 30% 30% 70% / 70% 30% 70% 30%;
+  }
+  66% {
+    transform: translate(45%, 35%) scale(0.85);
+    border-radius: 50% 50% 50% 50% / 30% 70% 30% 70%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 30% 70% 70% 30% / 30% 70% 30% 70%;
+  }
+}
+
+@keyframes gradientFloat5 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 50% 50% 30% 70% / 70% 30% 50% 50%;
+  }
+  20% {
+    transform: translate(40%, 40%) scale(1.1);
+    border-radius: 30% 70% 50% 50% / 50% 50% 70% 30%;
+  }
+  40% {
+    transform: translate(-50%, 30%) scale(0.95);
+    border-radius: 70% 30% 30% 70% / 30% 70% 50% 50%;
+  }
+  60% {
+    transform: translate(-40%, -50%) scale(1.2);
+    border-radius: 50% 50% 70% 30% / 30% 70% 30% 70%;
+  }
+  80% {
+    transform: translate(50%, -30%) scale(0.9);
+    border-radius: 30% 70% 50% 50% / 70% 30% 60% 40%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 50% 50% 30% 70% / 70% 30% 50% 50%;
+  }
+}
+
+@keyframes gradientFloat6 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 60% 40% 40% 60% / 40% 60% 40% 60%;
+  }
+  25% {
+    transform: translate(-55%, -35%) scale(1.15);
+    border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+  }
+  50% {
+    transform: translate(45%, 55%) scale(0.85);
+    border-radius: 70% 30% 30% 70% / 30% 70% 30% 70%;
+  }
+  75% {
+    transform: translate(35%, -55%) scale(1.25);
+    border-radius: 30% 70% 70% 30% / 70% 30% 70% 30%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 60% 40% 40% 60% / 40% 60% 40% 60%;
+  }
+}
+
+@keyframes gradientFloat7 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 40% 60% 50% 50% / 50% 50% 40% 60%;
+  }
+  20% {
+    transform: translate(45%, -45%) scale(1.2);
+    border-radius: 60% 40% 30% 70% / 70% 30% 60% 40%;
+  }
+  40% {
+    transform: translate(60%, 30%) scale(0.9);
+    border-radius: 30% 70% 70% 30% / 30% 70% 30% 70%;
+  }
+  60% {
+    transform: translate(-45%, 45%) scale(1.1);
+    border-radius: 70% 30% 40% 60% / 40% 60% 70% 30%;
+  }
+  80% {
+    transform: translate(-30%, -60%) scale(0.95);
+    border-radius: 50% 50% 60% 40% / 40% 60% 50% 50%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 40% 60% 50% 50% / 50% 50% 40% 60%;
+  }
+}
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Adjust section backgrounds for better frosted effect */
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    section:not(.hero) {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .alt-bg {
+      background: rgba(83, 104, 120, 0.8);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+    }
+
+    .page-footer {
+      background: rgba(26, 26, 29, 0.95) !important;
+      padding: 2rem 2rem;
+      text-align: center;
+      color: #D1D5DB;
+      font-size: 0.9rem;
+    }
+
+    .page-footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .page-footer a:hover {
+      opacity: 0.8;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .headline {
+        font-size: 2.5rem;
+      }
+
+      .nav-list {
+        padding: 1rem;
+      }
+
+      section {
+        padding: 4rem 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-62HQE3WZ9T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-62HQE3WZ9T');
+  </script>
+</head>
+
+<body>
+  <div class="gradient-bg">
+    <div class="gradient gradient-1"></div>
+    <div class="gradient gradient-2"></div>
+    <div class="gradient gradient-3"></div>
+    <div class="gradient gradient-4"></div>
+    <div class="gradient gradient-5"></div>
+    <div class="gradient gradient-6"></div>
+    <div class="gradient gradient-7"></div>
+    <div class="gradient gradient-8"></div>
+  </div>
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-item"><a href="#top">K01</a></li>
+      <li class="nav-item"><a href="#research">Research</a></li>
+      <li class="nav-item"><a href="#platform">Platform</a></li>
+      <li class="nav-item"><a href="#applications">Impact</a></li>
+      <li class="nav-item"><a href="#team">Team</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="top">
+    <div class="gradient-bg">
+      <div class="gradient gradient-1"></div>
+      <div class="gradient gradient-2"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="headline">
+        Advancing healthcare<br />
+        through <span id="changing-text" class="typed-text">synthetic
+            data</span>
+      </h1>
+      <p class="subheadline">
+        Transforming clinical research and development with privacy-preserving synthetic data generation and advanced
+        causal inference.
+      </p>
+    </div>
+    <div style="position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%); cursor: pointer;" onclick="document.getElementById('research').scrollIntoView({ behavior: 'smooth' });">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg); animation: pulse 1.5s ease-in-out infinite;"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </section>
+
+<section id="research" class="alt-bg">
+  <div class="container">
+    <h2 class="section-title">Research Foundation</h2>
+    <div class="section-headline">Advanced synthetic data generation with privacy guarantees</div>
+    <p class="section-text">
+      Our core research combines deep generative models with formal privacy frameworks to create synthetic healthcare
+      datasets that preserve both statistical relationships and patient privacy. By integrating causal inference and
+      differential privacy, we ensure generated data maintains clinical utility while providing mathematical privacy
+      guarantees.
+    </p>
+    <div class="code-block" style="white-space: pre;">// Privacy-Preserving Generator
+      G: D_real → D_syn
+
+      // Optimization Objective
+      min KL(P_real || P_syn) // Distribution matching
+      s.t. privacy_loss ≤ ε // Privacy bound
+      causal_structure(D_syn) ≈ // Structure preservation
+      causal_structure(D_real)</div>
+  </div>
+</section>
+
+<section id="platform">
+  <div class="container">
+    <h2 class="section-title">Healthcare AI Platform</h2>
+    <div class="section-headline">Production-ready synthetic data infrastructure</div>
+    <p class="section-text">
+      Our platform empowers healthcare organizations to safely generate and validate synthetic datasets at scale. Built
+      for the complexities of healthcare data, it combines advanced privacy-preserving algorithms with automated
+      validation pipelines to ensure both statistical fidelity and regulatory compliance. The platform seamlessly
+      integrates with existing clinical workflows, from EHR systems to research environments.
+    </p>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Synthetic Generation</h3>
+        <p>Generate high-fidelity synthetic datasets with configurable privacy guarantees and built-in demographic
+          balancing</p>
+      </div>
+      <div class="feature-card">
+        <h3>Automated Validation</h3>
+        <p>Comprehensive validation suite testing statistical properties, fairness metrics, and privacy compliance in
+          real-time</p>
+      </div>
+      <div class="feature-card">
+        <h3>Research Integration</h3>
+        <p>APIs and tools for seamless integration with clinical research pipelines, including automated documentation
+          and audit trails</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="applications" class="alt-bg">
+  <div class="container">
+    <h2 class="section-title">Healthcare Impact</h2>
+    <div class="section-headline">From research to real-world applications</div>
+    <p class="section-text">
+      Healthcare organizations use our platform to unlock previously inaccessible data insights while maintaining
+      patient privacy. Our synthetic data solutions enable rapid clinical trial design, rare disease research, and AI
+      model development - reducing time-to-insight from months to days.
+    </p>
+    <div class="impact-blocks">
+      <div class="impact-stat">
+        <div class="stat-number">97<span>%</span></div>
+        <div class="stat-description">Of hospital data remains unused due to privacy and access restrictions<sup>1</sup></div>
+      </div>
+      <div class="impact-stat">
+        <div class="stat-number">12<span>+ months</span></div>
+        <div class="stat-description">Average delay initiate health research due to data access barriers<sup>2</sup>
+        </div>
+      </div>
+      <div class="impact-stat">
+        <div class="stat-number">2<span>x</span></div>
+        <div class="stat-description">Faster health software development enabled by synthetic data<sup>3</sup>
+        </div>
+      </div>
+    </div>
+    <div class="citations">
+      <ol>
+        1: Deloitte. A Holistic Approach to Unlock the Value of Health Data. 2023.
+        2: Wellcome Trust, "Delays faced by researchers trying to access data from HSCIC". 2015.
+        3: “DevOps and Cloud Mean the End of QA as You Know It.” CIO, 16 June 2019.
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="container">
+    <h2 class="section-title">Team</h2>
+    <div class="profile-grid">
+      <div class="profile">
+        <img src="assets/img/arinbjorn.webp" alt="Arinbjörn Kolbeinsson">
+        <h3 class="profile-name">Dr. Arinbjörn Kolbeinsson</h3>
+        <div class="profile-title">Co-founder | PhD Imperial College London</div>
+        <p class="profile-bio">
+          A machine learning researcher with experience at Samsung AI, the University of Virginia and Evidation Health where he
+          specialised in developing prediction models for a digital health monitoring programs that uses wearable
+          sensor data to detect early signs of illness.
+        </p>
+      </div>
+      <div class="profile">
+        <img src="assets/img/profile.jpg" alt="Dr. Benedikt Kolbeinsson">
+        <h3 class="profile-name">Dr. Benedikt Kolbeinsson</h3>
+        <div class="profile-title">Co-founder | PhD Imperial College London</div>
+        <p class="profile-bio">
+          Computer vision specialist combining research at Imperial College London with industry experience at
+          Meta-acquired Scape Technologies and K01. Created large-scale synthetic datasets for simulations, 
+          specializing in scalable platforms that ensure accuracy for machine learning models.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="recognition" class="alt-bg">
+    <div class="container">
+      <h2 class="section-title">Working With</h2>
+      <div class="logo-grid">
+        <!-- New Logos -->
+        <div class="logo-item">
+          <img src="assets/logos/EL.png" alt="EL Logo">
+        </div>
+        <div class="logo-item">
+          <img src="assets/logos/hh.png" alt="HH Logo">
+        </div>
+        <div class="logo-item">
+          <img src="assets/logos/rannis.png" alt="RANNIS Logo">
+        </div>
+        <div class="logo-item">
+          <img src="assets/logos/techdevfund.png" alt="Tech Development Fund Logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <script>
+    // Function to shuffle array
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    // Get strings and shuffle them
+    const strings = [
+      'synthetic data',
+      'causal inference',
+      'healthcare intelligence',
+      'clinical prediction',
+      'patient privacy',
+      'data synthesis',
+      'predictive modeling',
+      'better drug discovery',
+      'drug repurposing',
+      'clinical insights',
+      'real-world evidence',
+      'clinical validation',
+      'secure data generation',
+      'biomedical research',
+      'personalised medicine',
+      'better clinical trials'
+    ];
+    
+    var typed = new Typed('#changing-text', {
+      strings: shuffleArray(strings),
+      typeSpeed: 40,
+      backSpeed: 25,
+      backDelay: 1500,
+      loop: true,
+      smartBackspace: false,
+      showCursor: true,
+      cursorChar: '|',
+      autoInsertCss: true,
+      onStringTyped: function() {
+        // Shuffle array again after each loop
+        this.strings = shuffleArray(strings);
+      }
+    });
+  </script>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>&copy; 2025 K01 ehf.</p>
+    </div>
+  </footer>
+</body>
 
 </html>
