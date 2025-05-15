@@ -257,8 +257,9 @@
       font-weight: 300;
       line-height: 1.2;
       margin-bottom: 1.5rem;
-      width: 90vw;
+      width: 100%;
       height: 14rem;
+      box-sizing: border-box;
     }
 
     .subheadline {
@@ -806,6 +807,14 @@
     }
 
     @media (max-width: 768px) {
+      .hero-content {
+        padding: 0 1rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+
       .headline {
         font-size: 2.5rem;
       }
@@ -952,7 +961,7 @@
 
 <section id="platform">
   <div class="container">
-    <h2 class="section-title">Healthcare AI Platform</h2>
+    <h2 class="section-title">K01 Privacy Preserving Data Engine</h2>
     <div class="section-headline">Production-ready synthetic data infrastructure</div>
     <p class="section-text">
       Our platform empowers healthcare organizations to safely generate and validate synthetic datasets at scale. Built
@@ -996,7 +1005,7 @@
       </div>
       <div class="impact-stat">
         <div class="stat-number">12<span>+ months</span></div>
-        <div class="stat-description">Average delay initiate health research due to data access barriers<sup>2</sup>
+        <div class="stat-description">Average delay to initiate health research due to data access barriers<sup>2</sup>
         </div>
       </div>
       <div class="impact-stat">
