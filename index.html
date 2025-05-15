@@ -227,6 +227,18 @@
       opacity: 1;
     }
 
+    k01-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .page-footer .k01-logo {
+      font-family: 'Montserrat', sans-serif;
+    }
+
     .hero {
       min-height: 80vh;
       display: flex;
@@ -406,7 +418,19 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .headline {
+    font-size: 2.5rem;
+  }
+  .subheadline {
+    font-size: 1.25rem;
+  }
+}
+
     @media (min-width: 769px) {
+      .hero-content {
+        margin-left: 10%;
+      }
       .feature-grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -815,9 +839,9 @@
         padding: 0 1rem;
       }
 
-      .headline {
+      /* .headline {
         font-size: 2.5rem;
-      }
+      } */
 
       .nav-list {
         padding: 1rem;
@@ -966,7 +990,7 @@
     <p class="section-text">
       Our platform empowers healthcare organizations to safely generate and validate synthetic datasets at scale. Built
       for the complexities of healthcare data, it combines advanced privacy-preserving algorithms with automated
-      validation pipelines to ensure both statistical fidelity and regulatory compliance. The platform seamlessly
+      validation pipelines to ensure both statistical fidelity and regulatory compliance.<br><br> The platform seamlessly
       integrates with existing clinical workflows, from EHR systems to research environments.
     </p>
     <div class="feature-grid">
@@ -1123,6 +1147,7 @@
 
   <footer class="page-footer">
     <div class="container">
+      <p class="k01-logo">K01</p>
       <p>&copy; 2025 K01 ehf.</p>
     </div>
   </footer>
