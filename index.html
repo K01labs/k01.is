@@ -746,6 +746,59 @@
       color: var(--light);
       font-size: 1.5rem;
       cursor: pointer;
+      z-index: 1001; /* Ensure toggle is above mobile menu */
+    }
+
+    /* Mobile Menu Styles */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; /* Adjust based on navbar height */
+      left: 0;
+      width: 100%;
+      background: var(--dark);
+      border-top: 1px solid var(--glass-border);
+      z-index: 999;
+      padding: 1rem 0;
+      animation: slideDown 0.3s ease-out;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mobile-nav-links li {
+      padding: 0.75rem 0;
+    }
+
+    .mobile-nav-links a {
+      color: var(--gray-300);
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    .mobile-nav-links a:hover {
+      color: var(--light);
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     /* Modal Styles */
@@ -923,6 +976,17 @@
     </div>
   </nav>
 
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-nav-links">
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#technology">Technology</a></li>
+      <li><a href="#use-cases">Use Cases</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#" class="nav-cta" onclick="openDemoModal(event); closeMobileMenu()">Get Started</a></li>
+    </ul>
+  </div>
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-bg">
@@ -934,10 +998,10 @@
         <span class="badge-icon"></span>
         <span>Backed by Icelandic Tech Development Fund</span>
       </div>
-      <h1>Transform Healthcare Data Barriers Into Innovation</h1>
+      <h1>Get Healthcare Data in Seconds, Not Months</h1>
       <p class="hero-subtitle">
-        Generate privacy-guaranteed synthetic datasets from your existing data or create new populations from scratch.
-        Enable AI development, accelerate research, and maintain complete compliance.
+        Generate privacy-guaranteed synthetic healthcare datasets on-demand. Create new patient populations, extend existing
+        cohorts, and accelerate AI development.
       </p>
       <div class="hero-cta-group">
         <a href="#" class="btn btn-primary" onclick="openDemoModal(event)">
@@ -1406,10 +1470,27 @@ subject to: privacy_loss ≤ ε
       });
     });
 
-    // Mobile menu toggle (basic implementation)
-    document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
-      alert('Mobile menu would open here - implement as needed');
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuToggle.addEventListener('click', function () {
+      mobileMenu.classList.toggle('active');
+      // Optional: Add body class to prevent scrolling when menu is open
+      document.body.classList.toggle('mobile-menu-open');
     });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+      link.addEventListener('click', function () {
+        closeMobileMenu();
+      });
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      document.body.classList.remove('mobile-menu-open');
+    }
 
     // Careers Modal
     function openCareersModal(e) {
