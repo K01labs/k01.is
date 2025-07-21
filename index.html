@@ -1190,74 +1190,104 @@ subject to: privacy_loss ≤ ε
     <div class="container">
       <div class="section-header">
         <span class="section-badge">Pricing</span>
-        <h2>Simple, Transparent Pricing</h2>
-        <p>Start small, scale as you grow</p>
+        <h2>Start Small, Scale Fast</h2>
+        <p>Built for startups, ready for enterprise</p>
       </div>
   
-      <div class="value-grid" style="max-width: 1000px; margin: 4rem auto 0;">
-        <!-- Basic Tier -->
-        <div class="value-card" style="text-align: center;">
-          <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Basic</h3>
-          <div style="margin: 2rem 0;">
-            <span style="font-size: 3rem; font-weight: 700; color: var(--primary);">$2,500</span>
-            <span style="color: var(--gray-400); font-size: 1.1rem;">/month</span>
+      <div class="value-grid" style="max-width: 1600px; margin: 4rem auto 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: stretch;">
+        <style>
+          @media (min-width: 1600px) {
+            .value-grid { grid-template-columns: repeat(4, 1fr) !important; }
+          }
+          @media (max-width: 768px) {
+            .value-grid { grid-template-columns: 1fr !important; }
+          }
+        </style>
+        <!-- Starter Tier -->
+        <div class="value-card" style="text-align: center; display: flex; flex-direction: column; min-height: 500px;">
+          <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Starter</h3>
+          <div style="margin: 2.5rem 0;">
+            <span style="font-size: 3rem; font-weight: 700; color: var(--primary);">$500</span>
+            <div style="color: var(--gray-400); font-size: 1.1rem; margin-top: 0.5rem;"> per dataset</div>
           </div>
-          <p style="color: var(--gray-400); margin-bottom: 2rem;">Perfect for startups and proof of concepts</p>
-          <ul style="list-style: none; text-align: left; margin-bottom: 2rem;">
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ 10,000 synthetic records/month</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Standard FHIR datasets</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ API access</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Basic privacy guarantees</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Email support</li>
+          <p style="color: var(--gray-400); margin-bottom: 2.5rem; min-height: 3rem;">Proof-of-concept and initial development</p>
+          <ul style="list-style: none; text-align: center; margin-bottom: 2.5rem; flex-grow: 1;">
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ 1,000 synthetic patients</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ FHIR compatible</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ Email support</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ No commitment</li>
           </ul>
-          <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: auto;">Get Started</a>
+          <a href="#contact" class="btn btn-primary" onclick="openDemoModal(event)" style="width: 100%;">Get Started</a>
+        </div>
+
+        <!-- Scale Tier -->
+        <div class="value-card" style="text-align: center; border-color: var(--primary); display: flex; flex-direction: column; min-height: 500px;">
+          <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Scale</h3>
+          <div style="margin: 2.5rem 0;">
+            <span style="font-size: 3rem; font-weight: 700; color: var(--primary);">$1,500</span>
+            <div style="color: var(--gray-400); font-size: 1.1rem; margin-top: 0.5rem;">/month</div>
+          </div>
+          <p style="color: var(--gray-400); margin-bottom: 2.5rem; min-height: 3rem;">Active development teams</p>
+          <ul style="list-style: none; text-align: center; margin-bottom: 2.5rem; flex-grow: 1;">
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ 5,000 patients/month</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ API access</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ Priority support</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ Cancel anytime</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" onclick="openDemoModal(event)" style="width: 100%;">Start Free Trial</a>
         </div>
   
         <!-- Enterprise Tier -->
-        <div class="value-card" style="text-align: center; border-color: var(--primary); position: relative;">
-          <div
-            style="position: absolute; top: 8px; left: 50%; transform: translateX(-50%); background: var(--primary); color: var(--light); padding: 0.25rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 500;">
-            NEW</div>
-          <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Enterprise</h3>
-          <div style="margin: 2rem 0;">
-            <span style="font-size: 2rem; font-weight: 600; color: var(--gray-300);">Custom Pricing</span>
+        <div class="value-card" style="text-align: center; display: flex; flex-direction: column; min-height: 500px;">
+          <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Enterprise</h3>
+          <div style="margin: 2.5rem 0;">
+            <span style="font-size: 2rem; font-weight: 600; color: var(--gray-300);">From $5,000</span>
+            <div style="font-size: 1rem; color: var(--gray-500); margin-top: 0.5rem;">/month</div>
           </div>
-          <p style="color: var(--gray-400); margin-bottom: 2rem;">For organizations ready to scale</p>
-          <ul style="list-style: none; text-align: left; margin-bottom: 2rem;">
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Unlimited synthetic records</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Custom data schemas</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Advanced privacy controls</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ On-premise deployment option</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Dedicated support & SLA</li>
+          <p style="color: var(--gray-400); margin-bottom: 2.5rem; min-height: 3rem;">Large-scale deployments</p>
+          <ul style="list-style: none; text-align: center; margin-bottom: 2.5rem; flex-grow: 1;">
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ Unlimited patients</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ Custom schemas</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ On-premise deployment</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ Dedicated support</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ SLA guaranteed</li>
           </ul>
           <a href="mailto:hello@k01.is?subject=Enterprise Pricing Inquiry" class="btn btn-primary"
-            style="width: 100%; margin-top: auto;">Contact Sales</a>
+            style="width: 100%;">Contact Sales</a>
         </div>
-  
-        <!-- Academia Tier -->
-        <div class="value-card" style="text-align: center;">
-          <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Academia</h3>
-          <div style="margin: 2rem 0;">
-            <span style="font-size: 2rem; font-weight: 600; color: var(--gray-300);">Special Pricing</span>
+
+        <!-- Academic Tier -->
+        <div class="value-card" style="text-align: center; display: flex; flex-direction: column; min-height: 500px;">
+          <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Academic</h3>
+          <div style="margin: 2.5rem 0;">
+            <span style="font-size: 2rem; font-weight: 600; color: var(--primary);">50% off</span>
+            <div style="font-size: 1rem; color: var(--gray-400); margin-top: 0.5rem;">all plans</div>
           </div>
-          <p style="color: var(--gray-400); margin-bottom: 2rem;">Supporting healthcare research & education</p>
-          <ul style="list-style: none; text-align: left; margin-bottom: 2rem;">
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Generous data allowances</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Research-friendly licensing</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Collaboration features</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Educational resources</li>
-            <li style="padding: 0.5rem 0; color: var(--gray-300);">✓ Citation support</li>
+          <p style="color: var(--gray-400); margin-bottom: 2.5rem; min-height: 3rem;">Universities and research institutions</p>
+          <ul style="list-style: none; text-align: center; margin-bottom: 2.5rem; flex-grow: 1;">
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ All Scale features</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ Research-friendly licensing</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ Collaboration features</li>
+            <li style="padding: 0.75rem 0; color: var(--gray-300);">✓ Educational resources</li>
           </ul>
-          <a href="mailto:hello@k01.is?subject=Academic Pricing Inquiry" class="btn btn-secondary"
-            style="width: 100%; background: var(--glass); border: 1px solid var(--glass-border); margin-top: auto;">Contact sales</a>
+          <a href="mailto:hello@k01.is?subject=Academic Discount Application" class="btn btn-secondary"
+            style="width: 100%; background: var(--glass); border: 1px solid var(--glass-border);">Apply for Discount</a>
         </div>
       </div>
-  
-      <div style="text-align: center; margin-top: 3rem; color: var(--gray-400);">
-        <p style="font-size: 1rem;">
-          All plans include GDPR compliance, FHIR compatibility, and security updates.<br>
-          <span style="color: var(--primary);">Save 20% with annual billing.</span>
-        </p>
+
+      <!-- Value Propositions -->
+      <div style="text-align: center; margin-top: 4rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+          <div style="color: var(--gray-300);">
+            <span>No setup fees or long-term contracts</span>
+          </div>
+          <div style="color: var(--gray-300);">
+            <span>Upgrade or downgrade anytime</span>
+          </div>
+          <div style="color: var(--gray-300);">
+            <span>Save 20% with annual billing</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
