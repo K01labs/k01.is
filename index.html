@@ -15,12 +15,36 @@
   <meta property="og:image" content="https://k01.is/assets/og-image.jpg">
   <meta property="og:url" content="https://k01.is">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="K01">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="K01 - Unlock Healthcare Data with Privacy-First Synthetic Generation">
+  <meta name="twitter:description" content="Transform locked healthcare data into actionable insights. Enable AI development and research while guaranteeing patient privacy.">
+  <meta name="twitter:image" content="https://k01.is/assets/og-image.jpg">
+
+  <!-- SEO Meta Tags -->
+  <link rel="canonical" href="https://k01.is">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0A84FF">
+  <meta name="msapplication-TileColor" content="#0A84FF">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Performance Optimizations -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <!-- Optimized font loading -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"></noscript>
 
   <style>
     :root {
@@ -958,6 +982,115 @@
       }
     }
   </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://k01.is/#organization",
+        "name": "K01",
+        "legalName": "K01 ehf.",
+        "url": "https://k01.is",
+        "logo": "https://k01.is/assets/og-image.jpg",
+        "description": "Privacy-first synthetic healthcare data generation platform. Transform locked healthcare data into actionable insights while guaranteeing patient privacy.",
+        "foundingDate": "2024",
+        "founders": [
+          {
+            "@type": "Person",
+            "name": "Dr. Arinbjörn Kolbeinsson",
+            "jobTitle": "CEO & Co-founder"
+          },
+          {
+            "@type": "Person", 
+            "name": "Dr. Benedikt Kolbeinsson",
+            "jobTitle": "CTO & Co-founder"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "hello@k01.is"
+        },
+        "sameAs": [
+          "https://status.k01.is"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://k01.is/#software",
+        "name": "K01 Platform",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Web",
+        "description": "Enterprise-scale platform for generating privacy-guaranteed synthetic healthcare datasets. Enable AI development and research while maintaining patient privacy through differential privacy guarantees.",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Starter",
+            "price": "500",
+            "priceCurrency": "USD",
+            "description": "1,000 synthetic patients, FHIR compatible, email support"
+          },
+          {
+            "@type": "Offer", 
+            "name": "Scale",
+            "price": "1500",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M",
+            "description": "5,000 patients/month, API access, priority support"
+          }
+        ],
+        "provider": {
+          "@id": "https://k01.is/#organization"
+        },
+        "featureList": [
+          "Differential Privacy Guarantees",
+          "FHIR R4 Compatible",
+          "RESTful APIs",
+          "Real-time Generation",
+          "Clinical Accuracy Preservation"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Team Members Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://k01.is/#arinbjorn",
+        "name": "Dr. Arinbjörn Kolbeinsson", 
+        "jobTitle": "CEO & Co-founder",
+        "description": "ML researcher with experience at Samsung AI and Evidation Health. Specialized in predictive models for digital health monitoring using wearable sensors.",
+        "worksFor": {
+          "@id": "https://k01.is/#organization"
+        },
+        "image": "https://k01.is/assets/img/arinbjorn.webp",
+        "alumniOf": "Imperial College London",
+        "sameAs": "https://arinbjorn.is"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://k01.is/#benedikt", 
+        "name": "Dr. Benedikt Kolbeinsson",
+        "jobTitle": "CTO & Co-founder",
+        "description": "Computer vision specialist from Meta-acquired Scape Technologies. Expert in large-scale synthetic data generation for ML systems.",
+        "worksFor": {
+          "@id": "https://k01.is/#organization"
+        },
+        "image": "https://k01.is/assets/img/profile.jpg",
+        "alumniOf": "Imperial College London",
+        "sameAs": "https://benedikt.phd"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -1329,7 +1462,7 @@ subject to: privacy_loss ≤ ε
       <div class="team-grid">
         <div class="team-member">
           <img src="assets/img/arinbjorn.webp" alt="Dr. Arinbjörn Kolbeinsson" class="member-image">
-          <h3 class="member-name">Dr. Arinbjörn Kolbeinsson</h3>
+          <h3 class="member-name"><a href="https://arinbjorn.is" rel="me" style="color: inherit; text-decoration: none;">Dr. Arinbjörn Kolbeinsson</a></h3>
           <p class="member-role">CEO & Co-founder</p>
           <p class="member-bio">
             ML researcher with experience at Samsung AI and Evidation Health.
@@ -1338,7 +1471,7 @@ subject to: privacy_loss ≤ ε
         </div>
         <div class="team-member">
           <img src="assets/img/profile.jpg" alt="Dr. Benedikt Kolbeinsson" class="member-image">
-          <h3 class="member-name">Dr. Benedikt Kolbeinsson</h3>
+          <h3 class="member-name"><a href="https://benedikt.phd" rel="me" style="color: inherit; text-decoration: none;">Dr. Benedikt Kolbeinsson</a></h3>
           <p class="member-role">CTO & Co-founder</p>
           <p class="member-bio">
             Computer vision specialist from Meta-acquired Scape Technologies.

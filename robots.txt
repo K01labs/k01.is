@@ -1,0 +1,17 @@
+# robots.txt for https://k01.is
+
+# Allow all search engines to index the entire website
+User-agent: *
+Allow: /
+
+# Block access to any potential admin or private directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Point to sitemap
+Sitemap: https://k01.is/sitemap.xml
+
+# Crawl delay for polite crawling (optional)
+Crawl-delay: 1
